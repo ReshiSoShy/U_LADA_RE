@@ -1,0 +1,16 @@
+{
+    "name": "Player",
+    "rootNamespace": "ReshiSoShy.Main.Player",
+    "references": [
+        "GUID:3428f5699f2cf534c9d032bccc694793"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

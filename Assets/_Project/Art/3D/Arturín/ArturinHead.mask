@@ -1,0 +1,259 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ArturinHead
+  m_Mask: 00000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: "ARTUR\xCDN"
+    m_Weight: 1
+  - m_Path: Barrita del barril de cerveza
+    m_Weight: 1
+  - m_Path: Base HumanHeadBone001Gizmo
+    m_Weight: 1
+  - m_Path: Base HumanHeadGizmo
+    m_Weight: 1
+  - m_Path: Base HumanLCollarboneGizmo
+    m_Weight: 1
+  - m_Path: Base HumanLForearmGizmo
+    m_Weight: 1
+  - m_Path: Base HumanLPalmGizmo
+    m_Weight: 1
+  - m_Path: Base HumanLThighGizmo
+    m_Weight: 1
+  - m_Path: Base HumanLUpperarmGizmo
+    m_Weight: 1
+  - m_Path: Base HumanPelvisGizmo
+    m_Weight: 1
+  - m_Path: Base HumanPelvisGizmo/Base HumanRIKTarget
+    m_Weight: 1
+  - m_Path: Base HumanPelvisGizmo/Dummy492
+    m_Weight: 1
+  - m_Path: Base HumanPelvisGizmo/Dummy492/Base HumanLIKTarget
+    m_Weight: 1
+  - m_Path: Base HumanRCollarboneGizmo
+    m_Weight: 1
+  - m_Path: Base HumanRForearmGizmo
+    m_Weight: 1
+  - m_Path: Base HumanRPalmGizmo
+    m_Weight: 1
+  - m_Path: Base HumanRPalmGizmo/Dummy pluma
+    m_Weight: 1
+  - m_Path: Base HumanRPalmGizmo/Dummy pluma/Bone009
+    m_Weight: 1
+  - m_Path: Base HumanRPalmGizmo/Dummy pluma/Bone009/Bone010
+    m_Weight: 1
+  - m_Path: Base HumanRPalmGizmo/Dummy pluma/Bone009/Bone010/Bone011
+    m_Weight: 1
+  - m_Path: Base HumanRPalmGizmo/Dummy pluma/Bone009/Bone010/Bone011/Bone012
+    m_Weight: 1
+  - m_Path: Base HumanRPalmGizmo/Dummy pluma/Bone009/Bone010/Bone011/Bone012/Bone013
+    m_Weight: 1
+  - m_Path: Base HumanRPalmGizmo/Dummy pluma/Bone009/Bone010/Bone011/Bone012/Bone013/Bone014
+    m_Weight: 1
+  - m_Path: Base HumanRPalmGizmo/Dummy pluma/Bone009/Bone010/Bone011/Bone012/Bone013/Bone014/Bone015
+    m_Weight: 1
+  - m_Path: Base HumanRPalmGizmo/Dummy606
+    m_Weight: 1
+  - m_Path: Base HumanRPalmGizmo/Dummy606/Cristal009
+    m_Weight: 1
+  - m_Path: Base HumanRPalmGizmo/Dummy606/Flor
+    m_Weight: 1
+  - m_Path: Base HumanRPalmGizmo/Dummy606/Mapa
+    m_Weight: 1
+  - m_Path: Base HumanRPalmGizmo/Dummy606/TAZA
+    m_Weight: 1
+  - m_Path: Base HumanRThighGizmo
+    m_Weight: 1
+  - m_Path: Base HumanRUpperarmGizmo
+    m_Weight: 1
+  - m_Path: "Bolso Artur\xEDn"
+    m_Weight: 1
+  - m_Path: Chaqueta de lana
+    m_Weight: 1
+  - m_Path: Circle002
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanLPlatform
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanLThigh
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanLThigh/Base HumanLCalf
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanLThigh/Base HumanLCalf/Base HumanLFoot
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanLThigh/Base HumanLCalf/Base HumanLFoot/Hueso
+      PIE SUELTO Izq
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanRThigh
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanRThigh/Base HumanRCalf
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanRThigh/Base HumanRCalf/Base HumanRFoot
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanRThigh/Base HumanRCalf/Base HumanRFoot/Hueso
+      PIE SUELTO dech
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanL  Clav\xEDcula"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanL  Clav\xEDcula/Base HumanLUpperarm"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanL  Clav\xEDcula/Base HumanLUpperarm/Base HumanLForearm"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanL  Clav\xEDcula/Base HumanLUpperarm/Base HumanLForearm/Base
+      HumanLPalm"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanL  Clav\xEDcula/Base HumanLUpperarm/Base HumanLForearm/Base
+      HumanLPalm/Base HumanLDigit11"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanL  Clav\xEDcula/Base HumanLUpperarm/Base HumanLForearm/Base
+      HumanLPalm/Base HumanLDigit11/Base HumanLDigit12"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanL  Clav\xEDcula/Base HumanLUpperarm/Base HumanLForearm/Base
+      HumanLPalm/Base HumanLDigit21"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanL  Clav\xEDcula/Base HumanLUpperarm/Base HumanLForearm/Base
+      HumanLPalm/Base HumanLDigit21/Base HumanLDigit22"
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanNeck
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanNeck/Base HumanHead
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanNeck/Base HumanHead/Base HumanHeadBone001
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanNeck/Base HumanHead/Base HumanHeadBone001/Dummy491
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanNeck/Base HumanHead/Base HumanHeadBone001/Dummy491/Dientes
+      inferiores
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanNeck/Base HumanHead/Dientes superiores
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanNeck/Base HumanHead/Dummy487
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanNeck/Base HumanHead/Dummy487/Ceja 1
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanNeck/Base HumanHead/Dummy488
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanNeck/Base HumanHead/Dummy488/Ceja 2
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanNeck/Base HumanHead/Dummy489
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanNeck/Base HumanHead/Dummy489/Ojo Artur\xEDn001"
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanNeck/Base HumanHead/Dummy490
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanNeck/Base HumanHead/Dummy490/Ojo Artur\xEDn"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanR Clav\xEDcula"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanR Clav\xEDcula/Base HumanRUpperarm"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanR Clav\xEDcula/Base HumanRUpperarm/Base HumanRForearm"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanR Clav\xEDcula/Base HumanRUpperarm/Base HumanRForearm/Base
+      HumanRPalm"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanR Clav\xEDcula/Base HumanRUpperarm/Base HumanRForearm/Base
+      HumanRPalm/Base HumanRDigit11"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanR Clav\xEDcula/Base HumanRUpperarm/Base HumanRForearm/Base
+      HumanRPalm/Base HumanRDigit11/Base HumanRDigit12"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanR Clav\xEDcula/Base HumanRUpperarm/Base HumanRForearm/Base
+      HumanRPalm/Base HumanRDigit21"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanR Clav\xEDcula/Base HumanRUpperarm/Base HumanRForearm/Base
+      HumanRPalm/Base HumanRDigit21/Base HumanRDigit22"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanR Clav\xEDcula/Base HumanRUpperarm/Base HumanRForearm/Base
+      HumanRPalm/Dummy495 porra interactuable"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanR Clav\xEDcula/Base HumanRUpperarm/Base HumanRForearm/Base
+      HumanRPalm/Dummy495 porra interactuable/Botella 021 mano"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanR Clav\xEDcula/Base HumanRUpperarm/Base HumanRForearm/Base
+      HumanRPalm/Dummy495 porra interactuable/Cuenco"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanR Clav\xEDcula/Base HumanRUpperarm/Base HumanRForearm/Base
+      HumanRPalm/Dummy495 porra interactuable/Dummy601"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanR Clav\xEDcula/Base HumanRUpperarm/Base HumanRForearm/Base
+      HumanRPalm/Dummy495 porra interactuable/Dummy601/Box125"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanR Clav\xEDcula/Base HumanRUpperarm/Base HumanRForearm/Base
+      HumanRPalm/Dummy495 porra interactuable/Martillo peque\xF1o"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanSpine4/Costillas/Base HumanR Clav\xEDcula/Base HumanRUpperarm/Base HumanRForearm/Base
+      HumanRPalm/Dummy495 porra interactuable/Porra Interactuable"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Dummy496 porra siempre en el cintur\xF3n"
+    m_Weight: 1
+  - m_Path: "Circle002/Base HumanPelvis/Dummy496 porra siempre en el cintur\xF3n/Porra
+      Siempre en el cintur\xF3n"
+    m_Weight: 1
+  - m_Path: Circle002/Base HumanRPlatform
+    m_Weight: 1
+  - m_Path: CostillasGizmo
+    m_Weight: 1
+  - m_Path: Dummy494
+    m_Weight: 1
+  - m_Path: "Dummy494/Pergamino Artur\xEDn"
+    m_Weight: 1
+  - m_Path: "Pluma Artur\xEDn"
+    m_Weight: 1
