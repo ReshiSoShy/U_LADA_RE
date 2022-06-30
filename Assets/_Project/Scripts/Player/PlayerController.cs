@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 namespace ReshiSoShy.Main.Player
 {
     public class PlayerController : MonoBehaviour
@@ -31,7 +30,6 @@ namespace ReshiSoShy.Main.Player
             _rotator = _player.GetComponent<GraphicsRotator>();
             _interactionsSelector = _player.GetComponent<InteractionsSelector>();
         }
-
         public void Update()
         {
             _inputVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
@@ -43,7 +41,6 @@ namespace ReshiSoShy.Main.Player
             {
                 StopAllCoroutines();
                 _rotator.RotateTowards(_movementVector);
-
             }
             if (_interactKeyPressed)
             {
@@ -102,6 +99,10 @@ namespace ReshiSoShy.Main.Player
         {
             var speed = _movementVector != Vector3.zero ? _runKeyBeingHold ? 2: 1 : 0;
             _anim.SetFloat("WalkSpeed", speed );
+        }
+        public Vector3 GetInputVector()
+        {
+            return _movementVector;
         }
     }
 }
