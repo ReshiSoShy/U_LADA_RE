@@ -1,0 +1,14 @@
+{
+    "name": "Dialogues",
+    "rootNamespace": "ReshiSoShy.Main.Dialogues",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
