@@ -1,7 +1,10 @@
 {
     "name": "Dialogues",
     "rootNamespace": "ReshiSoShy.Main.Dialogues",
-    "references": [],
+    "references": [
+        "GUID:a11bff96782ac1e4d85fdd7fcd730f0b",
+        "GUID:797aecf127c67e24e8405862504c21b4"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

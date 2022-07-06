@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using ReshiSoShy.Main.Dialogues;
 namespace ReshiSoShy.Main.Player
 {
     public class InteractionsSelector : MonoBehaviour
@@ -85,7 +85,6 @@ namespace ReshiSoShy.Main.Player
         {
             if (_locked)
                 return;
-            ClearSelectionOutput();
             m_timeSinceLastUpdate = 0.00f;
             GameObject closestInteraction = null;
             float closestDOT = -1;
@@ -99,8 +98,12 @@ namespace ReshiSoShy.Main.Player
                     closestDOT = distanceToInteraction;
                 }
             }
-            _currentSelection = closestInteraction;
-            _currentIndex = _availableInteractions.IndexOf(_currentSelection);
+            if(closestInteraction != _currentSelection)
+            {
+                ClearSelectionOutput();
+                _currentSelection = closestInteraction;
+                _currentIndex = _availableInteractions.IndexOf(_currentSelection);
+            }
         }
         void PassiveSelectionUpdate()
         {
@@ -120,7 +123,13 @@ namespace ReshiSoShy.Main.Player
         public void Interact()
         {
             m_timeSinceLastUpdate = 0.00f;
-            _currentSelection.GetComponent<IInteractable>().Interact();
+            var hasInteraction = _currentSelection.GetComponent<IInteractable>();
+            // some logic 
+            // we choose to talk
+            if (hasInteraction == null)
+                return;
+            Caller caller = (Caller)GameObject.FindObjectOfType(typeof(Caller));
+            caller.Speak(this.gameObject, _currentSelection, Concepts.hablar);
         }
         bool _locked = false;
         public void Lock()

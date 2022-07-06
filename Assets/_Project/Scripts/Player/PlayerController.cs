@@ -42,18 +42,14 @@ namespace ReshiSoShy.Main.Player
                 StopAllCoroutines();
                 _rotator.RotateTowards(_movementVector);
             }
-            if (_interactKeyPressed)
-            {
-
-                _anim.SetTrigger("Interact");
-            }
             SetAnimations();
             if (_movementVector != Vector3.zero)
             {
-                _interactionsSelector.ActiveSelectionUpdate();
+               _interactionsSelector.ActiveSelectionUpdate();
             }
             if (_interactKeyPressed)
             {
+                _anim.SetTrigger("Interact");
                 StopAllCoroutines();
                 _interactionsSelector.Lock();
                 _interactionsSelector.Interact();

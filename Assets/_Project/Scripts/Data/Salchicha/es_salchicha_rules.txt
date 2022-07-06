@@ -1,0 +1,5 @@
+// id/concept/k:v/triggers id's/phrases id's
+// Ejemplo 
+// 4/pista/cartelVisto:true/0,4,3/32,3,4
+
+0/respuestaMultiple/hasWine:true/0,3,4
