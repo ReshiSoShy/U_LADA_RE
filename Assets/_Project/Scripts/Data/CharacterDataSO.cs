@@ -8,7 +8,10 @@ namespace ReshiSoShy.Main.Data
     public class CharacterDataSO : ScriptableObject
     {
         [SerializeField]
+        string _characterName;
+        [SerializeField]
         TextAsset _rules;
+        public string GetCharacterName => _characterName;
         public string GetRules()
         {
             return _rules.text;

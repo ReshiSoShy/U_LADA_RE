@@ -7,10 +7,8 @@ namespace ReshiSoShy.Main.Data
     public class CharacterData : MonoBehaviour
     {
         [SerializeField]
-        string _charName;
-        [SerializeField]
         CharacterDataSO _charData;
-        public string GetName() => _charName;
+        public string GetName() => _charData.GetCharacterName;
         public string GetStoredData()
         {
             return "STORED DATA";

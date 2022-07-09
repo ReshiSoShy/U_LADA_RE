@@ -1,7 +1,6 @@
 // Petición : 
-// lengua:es,soy:arturin,concepto:hablar,con:salchicha,{k:v del hablante + k:v del mundo}
+// lengua:es,soy:Arturin,concepto:hablar,con:salchicha,{k:v del hablante + k:v del mundo}
 // Regla
-// id/concept:value,k:v/triggers id's/phrases id's
-0/lengua:es,soy:arturin,concepto:hablar/0,3,4/5
-1/lengua:es,soy:arturin,concepto:hablar,con:salchicha/0,3,4/5
-2/lengua:es,soy:arturin,concepto:hablar,con:salchicha,invent:holis/0,3,4/5
+// id/k:v/triggers id's/phrases id's/character:nextConcept
+// Los nombres deben empezar con mayúscula pero no deben contener tildes	
+0/lengua:es,soy:Arturin,concepto:hablar,con:Salchicha/0/0/Salchicha:firstConv/

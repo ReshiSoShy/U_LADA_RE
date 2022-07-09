@@ -3,7 +3,8 @@
     "rootNamespace": "ReshiSoShy.Main.Dialogues",
     "references": [
         "GUID:a11bff96782ac1e4d85fdd7fcd730f0b",
-        "GUID:797aecf127c67e24e8405862504c21b4"
+        "GUID:797aecf127c67e24e8405862504c21b4",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

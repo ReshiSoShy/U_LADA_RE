@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8cd0b585188fc49b854fd87726d994, type: 3}
   m_Name: Salchicha
   m_EditorClassIdentifier: 
+  _characterName: Salchicha
   _rules: {fileID: 4900000, guid: a82ab5b79d1461a4aa0e0b1a3a90cdfb, type: 3}
-  es_dialogues: {fileID: 4900000, guid: b979c9753c6dc644f803006d84957eb5, type: 3}
-  eng_dialogues: {fileID: 0}

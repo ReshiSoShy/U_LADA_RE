@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8cd0b585188fc49b854fd87726d994, type: 3}
   m_Name: Arturin
   m_EditorClassIdentifier: 
+  _characterName: Arturin
   _rules: {fileID: 4900000, guid: 2961817089a10404db99ab3e65a67f19, type: 3}
-  es_dialogues: {fileID: 0}
-  eng_dialogues: {fileID: 0}

@@ -129,7 +129,7 @@ namespace ReshiSoShy.Main.Player
             if (hasInteraction == null)
                 return;
             Caller caller = (Caller)GameObject.FindObjectOfType(typeof(Caller));
-            caller.Speak(this.gameObject, _currentSelection, Concepts.hablar);
+            caller.StartConvo(this.gameObject, _currentSelection);
         }
         bool _locked = false;
         public void Lock()

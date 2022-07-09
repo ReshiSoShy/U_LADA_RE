@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ReshiSoShy.Main.Data;
 using ReshiSoShy.Main.CustomSettings;
+using TMPro;
 using System;
 namespace ReshiSoShy.Main.Dialogues
 {
@@ -10,77 +11,62 @@ namespace ReshiSoShy.Main.Dialogues
     {
         [SerializeField]
         TextAsset _dialogues;
-        public void Push(string petition, string talkerRules)
+        AudioSolver _audioSolver;
+        Caller _caller;
+        Queue<Phrase> _phrases = new();
+        private void Awake()
         {
+            _audioSolver = GetComponent<AudioSolver>();
+            _triggerSolver = GetComponent<TriggersSolver>();
+            _caller = GetComponent<Caller>();
+        }
+        private void Update()
+        {
+            if(_phrases.Count != 0)
+            {
+                if (!_audioSolver.IsPlaying())
+                {
+                    if (Input.GetKeyDown(KeyCode.Return) || _audioSolver.Listening)
+                    {
+                        var phrase = _phrases.Dequeue();
+                        ManageTriggers(phrase.Triggers);
+                        SyncTextAndAudio(phrase.CharName, phrase.PhrasesIds, phrase.NextAction);
+                        _audioSolver.Listening = false;
+                    }
+                }
+            }
+        }
+        public void Push(string petition, string talkerRulesRaw, string charName)
+        {
+            Debug.Log("We pushing petition : " + petition);
             string[] petitionKVPairs = petition.Split(',');
-            Dictionary<string, string> petitionKeyValues = new();
-            foreach(string kvPair in petitionKVPairs)
-            {
-                string[] bits = kvPair.Split(':');
-                if(bits.Length == 2)
-                {
-                    string key = bits[0];
-                    string value = bits[1];
-                    petitionKeyValues.Add(key, value);
-                }
-            }
-            string[] rules = talkerRules.Split('\n');
-            int highestScore = 0;
-            List<string> winnerRules = new();
-            foreach (string rule in rules)
-            {
-                int ruleScore = 0;
-                if (rule[0] == '/' && rule[1] == '/' )
-                {
-                }
-                else
-                {
-                    string[] ruleBits = rule.Split('/');
-                    string id = ruleBits[0];
-                    string[] pairs = ruleBits[1].Split(',');
-                    Dictionary<string, string> rulesKeyValues = new();
-                    foreach(string KV in pairs)
-                    {
-                        string[] bits = KV.Split(':');
-                        string key = bits[0];
-                        string value = bits[1];
-                        rulesKeyValues.Add(key, value);
-                    }
-                    foreach (KeyValuePair<string, string> keyV in rulesKeyValues)
-                    {
-                        if (petitionKeyValues.ContainsKey(keyV.Key))
-                        {
-                            var desiredValue = petitionKeyValues[keyV.Key];
-                            if(keyV.Value == desiredValue)
-                            {
-                                ruleScore++;
-                            }
-                            else
-                            {
-                                ruleScore = -1;
-                                break;
-                            }
-                        }
-                        else
-                        {
-                            // Missmatch, rule discarted
-                            ruleScore = -1;
-                            break;
-                        }
-                    }
-                    if (ruleScore == -1)
-                        continue;
-                    if (ruleScore > highestScore)
-                    {
-                        winnerRules.Clear();
-                        highestScore = ruleScore;
-                        winnerRules.Add(rule);
-                    }
-                    else if (ruleScore == highestScore)
-                        winnerRules.Add(rule);
-                }
-            }
+            var petitionKeyValues = StringParsingFunctions.TurnIntoDictionary(petitionKVPairs, ':');
+            List<string> winnerRules = SelectWinnerRules(petitionKeyValues, talkerRulesRaw);
             string ruleToUse = null;
+            ruleToUse = SelectOneRuleOnly(winnerRules, ruleToUse);
+            if (ruleToUse == null)
+                return;
+            string[] winnerBits = ruleToUse.Split('/');
+            var triggers = winnerBits[2];
+            var phrasesIds = winnerBits[3];
+            var nextAction = winnerBits[4];
+            Phrase newPhrase = new Phrase(charName, triggers, phrasesIds, nextAction);
+            _phrases.Enqueue(newPhrase);
+        }
+
+        private void SyncTextAndAudio(string charName, string phrasesIds, string nextAction)
+        {
+            string allContent = _dialogues.text;
+            // Make a class that clears out the empty and the comment lines
+            // Make an automatic way of handling ids
+            string[] lines = allContent.Split('\n');
+            ShowTextOnScreen(phrasesIds, charName);
+            // this should wait until the last sentence has finished
+            HandleNextAction(nextAction);
+        }
+
+        private static string SelectOneRuleOnly(List<string> winnerRules, string ruleToUse)
+        {
             if (winnerRules.Count > 1)
             {
                 var randomInt = UnityEngine.Random.Range(0, winnerRules.Count);
@@ -94,27 +80,75 @@ namespace ReshiSoShy.Main.Dialogues
             {
 
             }
-            if (ruleToUse == null)
-                return;
-            string[] winnerBits = ruleToUse.Split('/');
-            var triggers = winnerBits[2];
-            var phrasesIds = winnerBits[3];
-
-            // Now we have the rule with the greatest score, go ahead and manage what happens next
-            // Call the triggers and say whatever it has to say
-            ManageTriggers(triggers);
-            ShowTextOnScreen(phrasesIds);
+            return ruleToUse;
         }
+
+        private static List<string> SelectWinnerRules(Dictionary<string, string> contextData, string talkerRulesRaw)
+        {
+            string[] criterions = talkerRulesRaw.Split('\n',StringSplitOptions.RemoveEmptyEntries);
+            criterions = StringParsingFunctions.ClearCommentLines(criterions);
+            int highestScore = 0;
+            List<string> winnerRules = new();
+            foreach (string criterion in criterions)
+            {
+                int ruleScore = 0;
+                string[] ruleBits = criterion.Split('/');
+                string id = ruleBits[0];
+                string[] pairs = ruleBits[1].Split(',');
+                var rulesKeyValues = StringParsingFunctions.TurnIntoDictionary(pairs, ':');
+                foreach (KeyValuePair<string, string> keyV in rulesKeyValues)
+                {
+                    if (contextData.ContainsKey(keyV.Key))
+                    {
+                        var desiredValue = contextData[keyV.Key];
+                        if (keyV.Value == desiredValue)
+                        {
+                            ruleScore++;
+                        }
+                        else
+                        {
+                            ruleScore = -1;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        // Missmatch, rule discarted
+                        ruleScore = -1;
+                        break;
+                    }
+                }
+                if (ruleScore == -1)
+                    continue;
+                if (ruleScore > highestScore)
+                {
+                    winnerRules.Clear();
+                    highestScore = ruleScore;
+                    winnerRules.Add(criterion);
+                }
+                else if (ruleScore == highestScore)
+                    winnerRules.Add(criterion);
+            }
+
+            return winnerRules;
+        }
+
+        TriggersSolver _triggerSolver;
         void ManageTriggers(string triggersIds)
         {
             string[] triggersBits = triggersIds.Split(',');
             foreach (string trigg in triggersBits)
-                print("Calling for trigger wit id : " + trigg);
+            {
+                _triggerSolver.SolveForTrigger(trigg);
+            }
         }
-        void ShowTextOnScreen(string phrasesIds)
+        [SerializeField]
+        TextMeshProUGUI _contentTextField;
+        [SerializeField]
+        TextMeshProUGUI _speakerNameTextField;
+        void ShowTextOnScreen(string phrasesIds, string charName)
         {
             string[] phrasesIdsBits = phrasesIds.Split(',');
-
             // Read from the script where all the phrases are lying down, for each character 
             // with every language, by id so we are blasing fast asf
             string allContent = _dialogues.text;
@@ -127,7 +161,16 @@ namespace ReshiSoShy.Main.Dialogues
                 bool wasPossible = Int32.TryParse(id, out index);
                 if (wasPossible)
                 {
-                    Debug.Log("We printing phrase with id : " + index);
+                    var phrase = lines[index];
+                    string[] bits = phrase.Split('/');
+                    string content = bits[1];
+                    string audioID = bits[2];
+                    string audioStartingPoint = bits[3];
+                    string audioEndPoint = bits[4];
+                    // To do : wait for audio to be ready and display and play audio at same time.
+                    _audioSolver.PushAudio(charName,audioID, audioStartingPoint, audioEndPoint);
+                    PrintOnScreen(content);
+                    _speakerNameTextField.text = SolveName(charName);
                 }
                 else
                 {
@@ -135,5 +178,41 @@ namespace ReshiSoShy.Main.Dialogues
                 }
             }
         }
+        void HandleNextAction(string nextAction)
+        {
+            _caller.Speak(nextAction);
+        }
+        public void PrintOnScreen(string content)
+        {
+            _contentTextField.text = content;
+        }
+        string SolveName(string name)
+        {
+            switch (name)
+            {
+                case "Arturin":
+                    return "Arturín";
+            }
+            return name;
+        }
+    }
+    struct Phrase
+    {
+        string charName;
+        string triggers;
+        string phrasesIds;
+        string nextAction;
+
+        public Phrase(string charName, string triggers, string phrasesIds, string nextAction)
+        {
+            this.charName = charName;
+            this.triggers = triggers;
+            this.phrasesIds = phrasesIds;
+            this.nextAction = nextAction;
+        }
+        public string CharName => charName;
+        public string Triggers => triggers;
+        public string PhrasesIds => phrasesIds;
+        public string NextAction => nextAction;
     }
 }
