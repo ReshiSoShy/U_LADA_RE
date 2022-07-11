@@ -22,19 +22,19 @@ namespace ReshiSoShy.Main.Dialogues
         }
         private void Update()
         {
-            if(_phrases.Count != 0)
-            {
-                if (!_audioSolver.IsPlaying())
-                {
-                    if (Input.GetKeyDown(KeyCode.Return) || _audioSolver.Listening)
-                    {
-                        var phrase = _phrases.Dequeue();
-                        ManageTriggers(phrase.Triggers);
-                        SyncTextAndAudio(phrase.CharName, phrase.GetPhraseID, phrase.NextAction);
-                        _audioSolver.Listening = false;
-                    }
-                }
-            }
+            //if(_phrases.Count != 0)
+            //{
+            //    if (!_audioSolver.IsPlaying())
+            //    {
+            //        if (Input.GetKeyDown(KeyCode.Return) || _audioSolver.Listening)
+            //        {
+            //            var phrase = _phrases.Dequeue();
+            //            ManageTriggers(phrase.Triggers);
+            //            SyncTextAndAudio(phrase.CharName, phrase.GetPhraseID, phrase.NextAction);
+            //            _audioSolver.Listening = false;
+            //        }
+            //    }
+            //}
         }
         public void Push(string petition, string talkerRulesRaw, string charName)
         {
@@ -139,7 +139,7 @@ namespace ReshiSoShy.Main.Dialogues
             string[] triggersBits = triggersIds.Split(',');
             foreach (string trigg in triggersBits)
             {
-                _triggerSolver.SolveForTrigger(trigg);
+                //_triggerSolver.SolveForTrigger(trigg);
             }
         }
         [SerializeField]

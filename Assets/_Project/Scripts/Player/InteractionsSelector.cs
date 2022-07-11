@@ -128,7 +128,7 @@ namespace ReshiSoShy.Main.Player
             // we choose to talk
             if (hasInteraction == null)
                 return;
-            DialogueController.Instance.LoadNewDialogueLine(this.gameObject, _currentSelection, "hablar"); 
+            //DialogueController.Instance.LoadNewDialogueLine(this.gameObject, _currentSelection, "hablar"); 
         }
         bool _locked = false;
         public void Lock()
