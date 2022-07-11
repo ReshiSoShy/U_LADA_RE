@@ -5,9 +5,6 @@ using ReshiSoShy.Main.Data;
 using ReshiSoShy.Main.CustomSettings;
 namespace ReshiSoShy.Main.Dialogues
 {
-    /// <summary>
-    /// Recolecta toda la información necesaria para hacer la llamada al <see cref="Listener"/>
-    /// </summary>
     public class Caller : MonoBehaviour
     {
         public static Caller Instance;

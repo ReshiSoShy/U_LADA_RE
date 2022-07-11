@@ -13,7 +13,7 @@ namespace ReshiSoShy.Main.Dialogues
         TextAsset _dialogues;
         AudioSolver _audioSolver;
         Caller _caller;
-        Queue<Phrase> _phrases = new();
+        Queue<RawPhraseLine> _phrases = new();
         private void Awake()
         {
             _audioSolver = GetComponent<AudioSolver>();
@@ -30,7 +30,7 @@ namespace ReshiSoShy.Main.Dialogues
                     {
                         var phrase = _phrases.Dequeue();
                         ManageTriggers(phrase.Triggers);
-                        SyncTextAndAudio(phrase.CharName, phrase.PhrasesIds, phrase.NextAction);
+                        SyncTextAndAudio(phrase.CharName, phrase.GetPhraseID, phrase.NextAction);
                         _audioSolver.Listening = false;
                     }
                 }
@@ -50,7 +50,7 @@ namespace ReshiSoShy.Main.Dialogues
             var triggers = winnerBits[2];
             var phrasesIds = winnerBits[3];
             var nextAction = winnerBits[4];
-            Phrase newPhrase = new Phrase(charName, triggers, phrasesIds, nextAction);
+            RawPhraseLine newPhrase = new RawPhraseLine(charName, triggers, phrasesIds, nextAction);
             _phrases.Enqueue(newPhrase);
         }
 
@@ -196,23 +196,5 @@ namespace ReshiSoShy.Main.Dialogues
             return name;
         }
     }
-    struct Phrase
-    {
-        string charName;
-        string triggers;
-        string phrasesIds;
-        string nextAction;
-
-        public Phrase(string charName, string triggers, string phrasesIds, string nextAction)
-        {
-            this.charName = charName;
-            this.triggers = triggers;
-            this.phrasesIds = phrasesIds;
-            this.nextAction = nextAction;
-        }
-        public string CharName => charName;
-        public string Triggers => triggers;
-        public string PhrasesIds => phrasesIds;
-        public string NextAction => nextAction;
-    }
+   
 }

@@ -128,8 +128,7 @@ namespace ReshiSoShy.Main.Player
             // we choose to talk
             if (hasInteraction == null)
                 return;
-            Caller caller = (Caller)GameObject.FindObjectOfType(typeof(Caller));
-            caller.StartConvo(this.gameObject, _currentSelection);
+            DialogueController.Instance.LoadNewDialogueLine(this.gameObject, _currentSelection, "hablar"); 
         }
         bool _locked = false;
         public void Lock()
